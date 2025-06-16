@@ -7,9 +7,11 @@ import numpy as np
 
 class GameOfLife:
 
-    def __init__(self, game):
-        self.game = game
-      
+    def __init__(self, rows, cols, initial_state=None):
+        self.rows = rows
+        self.cols = cols
+        self.grid = initial_state if initial_state is not None else np.zeros((rows, cols), dtype=int)
+
     def start(self):
         print("Starting main game...")
         # Additional game logic goes here
