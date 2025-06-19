@@ -59,6 +59,11 @@ Para cumplir con el análisis empírico, se recomienda lo siguiente:
 
 ![alt text](loglog_plot.png)
 
+Para ejecutar dicho analisis puede ejecutar el siguiente codigo:
+
+```bash
+python performance_test.py
+```
 ---
 
 ## ✍️ Autor
