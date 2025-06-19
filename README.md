@@ -50,53 +50,19 @@ Esto abrirá una ventana con la animación del juego en tiempo real.
 ---
 
 ## 📸 Cómo agregar pruebas de que el código funciona
-
-1. Toma capturas de la animación en ejecución.
-2. Guarda esas imágenes o gifs en la carpeta `captures/`.
-3. Luego puedes referenciar esas imágenes aquí mismo:
-
-```markdown
-### Glider funcionando:
-![glider](captures/glider.png)
-```
-
+![alt text](conway.gif)
 ---
 
 ## ⏱️ Pruebas de rendimiento (6.3)
 
 Para cumplir con el análisis empírico, se recomienda lo siguiente:
 
-1. Crear un script `performance_test.py` que haga lo siguiente:
-   - Ejecute el juego en grillas de diferentes tamaños: 32x32, 64x64, 128x128, ..., 1024x1024.
-   - Mida el tiempo promedio de ejecución por iteración usando `timeit`.
-   - Genere una gráfica de tiempo promedio vs número total de celdas.
-   - Incluya una visualización log-log.
-
-2. Guarda las gráficas generadas en la carpeta `results/` y referencia aquí:
-
-```markdown
-### Gráfica de rendimiento (log-log):
-![rendimiento](results/loglog_plot.png)
-```
-
----
-
-## 🧪 Análisis y discusión (6.4)
-
-Al final, asegúrate de reflexionar sobre:
-
-- ¿Cómo escala la implementación?
-- ¿Hay cuellos de botella?
-- ¿Tu implementación es eficiente?
-- ¿Cómo se compararía con una versión paralela?
-- ¿Qué mejoras podrías implementar?
-
-Incluye tus conclusiones como texto final o en un archivo `ANALISIS.md`.
+![alt text](loglog_plot.png)
 
 ---
 
 ## ✍️ Autor
 
-- Nombre: *(tu nombre aquí)*
+- Nombre: *Daniel Matarrita Jimenez*
 - Curso: Computación Paralela y Distribuida
-- Fecha: Junio 2025
+- Fecha: 18 de Junio 2025
