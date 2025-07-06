@@ -1,6 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import time
+import cProfile
+import pstats
 from GameOfLife import GameOfLife, step_numba
 
 def step_python(board, rows, cols):
@@ -43,14 +45,28 @@ def measure_performance(sizes, iterations=10):
         
         print(f"Tamaño: {size}x{size} | Python: {elapsed_python:.4f}s | Numba: {elapsed_numba:.4f}s")
     
+    # Guardar gráfica de comparación
     plt.plot(sizes, times_python, label='Python puro', marker='o')
     plt.plot(sizes, times_numba, label='Numba optimizado', marker='s')
     plt.xlabel("Tamaño del tablero")
     plt.ylabel("Tiempo total (s)")
     plt.title("Comparación de rendimiento Juego de la Vida")
     plt.legend()
-    plt.show()
+    plt.savefig("performance_plot.png")
+    print("Gráfica guardada como 'performance_plot.png'")
 
-if __name__ == "__main__":
+def generate_profile():
+    profiler = cProfile.Profile()
+    profiler.enable()
     sizes = [50, 100, 200, 400]
     measure_performance(sizes)
+    profiler.disable()
+    profiler.dump_stats("Perfilado.prof")
+    with open("Perfilado.txt", "w") as f:
+        ps = pstats.Stats(profiler, stream=f)
+        ps.sort_stats("cumulative")
+        ps.print_stats()
+    print("Perfilado guardado como 'Perfilado.txt' y 'Perfilado.prof'")
+
+if __name__ == "__main__":
+    generate_profile()
